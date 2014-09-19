@@ -32,6 +32,8 @@ Rails::Initializer.run do |config|
   config.gem 'ruby-prof', :version => '0.7.3', :lib => false
   config.gem 'rcov', :version => '1.0.0', :lib => false
   config.gem 'searchlogic', :version => '2.4.19'
+  config.gem 'less', :version => '1.2.21', :lib => false
+  config.gem 'fastercsv', :version => '1.5.3', :lib => false
 
   config.gem 'chronic', :version => '0.2.3'
   config.gem 'daemons', :version => '1.0.10'
@@ -48,15 +50,17 @@ Rails::Initializer.run do |config|
   config.gem 'rspec', :version => '1.3.2', :lib => false
   config.gem 'rspec-rails', :version => '1.3.2', :lib => false
 
+
   %w(spreadsheet fastercsv
       validates_as_email_address ).each do |gem|
     config.gem gem
   end
 
   # :lib => false for gems that aren't needed during run time, not used often, or used for development only
-  %w(less).each do |gem|
-    config.gem gem, :lib => false
-  end
+
+  #%w(less).each do |gem|
+  #  config.gem gem, :lib => false
+  #end
 
   # Some gems have different lib names compared to gem names
   config.gem 'mimetype-fu', :lib => 'mimetype_fu'
