@@ -11,6 +11,13 @@
     * cp config/database.yml.example config/database.yml
     * Adjust config/database.yml as needed
 * Prepare
+    * gem update --system 1.3.7
+    * gem install less -v=1.2.21
+    * gem install therubyracer -v 0.9.0
+    * gem install i18n -v 0.4.2
+    * gem install fastercsv -v 1.5.3
+    * For postgres installation:
+        * gem install pg -v 0.14.1
     * rake gems:install
     * rake db:setup
     * rake db:seed_fu

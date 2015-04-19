@@ -15,14 +15,14 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # For the moment we aren't going to be worried about locales
-  config.i18n.enforce_available_locales = false
+  # config.i18n.enforce_available_locales = false
 
   # Specify gems that this application depends on and have them installed with
   # rake gems:install
   config.gem 'calendar_date_select', :version => '1.16.1'
   config.gem 'authlogic', :version => '2.1.3'
   config.gem 'actionpack', :version => '2.3.9' # Dependency of formtastic
-  config.gem 'formtastic', :version => '1.1.0'
+  config.gem 'formtastic', :version => '1.0.1'
   config.gem 'will_paginate', :version => '2.3.12'
   config.gem 'faker', :version => '0.3.1', :lib => false
   config.gem 'ruby-progressbar', :version => '0.0.10', :lib => false
