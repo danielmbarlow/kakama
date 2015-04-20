@@ -21,3 +21,4 @@ public/stylesheets/cache
 tmp/*
 tmp/**/*
 webrat*.html
+.idea
