@@ -10,9 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require active_scaffold
-//= require prototype
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require jquery-ui/datepicker
 //= require_tree .
+
+$(document).ready(function() {
+    dpElement = $('#datepicker')
+        dpElement.datepicker({
+          dateFormat: "yy-mm-dd",
+          minDate: dpElement.data("min"),
+          maxDate: dpElement.data("max")
+        });
+});
