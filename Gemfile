@@ -29,7 +29,6 @@ gem 'spreadsheet'
 gem 'fastercsv'
 gem 'csv_builder', '~> 2.1.1'
 gem 'validates_as_email_address'
-gem 'less', '2.0.1'
 gem 'mimetype-fu', :require => 'mimetype_fu'
 gem 'delayed_job', '1.8.5'
 gem 'prawn', '0.7.2'
@@ -47,6 +46,8 @@ group :assets do
   # gem 'prototype-rails', '~> 3.2.1'
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
+  gem 'fullcalendar-rails'
+  gem 'momentjs-rails'
 end
 
 group :development do
