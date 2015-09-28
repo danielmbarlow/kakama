@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery-ui/datepicker
 //= require_tree .
+//= require moment
+//= require fullcalendar
 
 $(document).ready(function() {
     dpElement = $('#datepicker')
@@ -21,4 +23,22 @@ $(document).ready(function() {
           minDate: dpElement.data("min"),
           maxDate: dpElement.data("max")
         });
+
+    cal = $('#calendar')
+
+    cal.fullCalendar({
+        defaultView: 'agendaWeek',
+        minTime: '06:00:00',
+        maxTime: '19:00:00',
+        eventRender: function(event){
+            return (event.ranges.filter(function(range){ // test event against all the ranges
+
+                return (event.start.isBefore(range.end) &&
+                        event.end.isAfter(range.start));
+
+            }).length)>0; //if it isn't in one of the ranges, don't render it (by returning false)
+        },
+        events: eval(cal.data('availabilities'))
+    })
+
 });
