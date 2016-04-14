@@ -35,15 +35,18 @@ Rails::Initializer.run do |config|
   config.gem 'less', :version => '1.2.21', :lib => false
   config.gem 'fastercsv', :version => '1.5.3', :lib => false
 
+  config.gem 'hoe', :version => '2.8.0'
   config.gem 'chronic', :version => '0.2.3'
   config.gem 'daemons', :version => '1.0.10'
 
   # Cucumber and dependencies
+  config.gem 'tins', :version => '0.4.3'
   config.gem 'cucumber', :version => '0.6.4', :lib => false
   config.gem 'email_spec', :version => '0.6.2', :lib => false
   config.gem 'timecop', :version => '0.3.4', :lib => false
   config.gem 'nokogiri', :version => '1.4.1', :lib => false
   config.gem 'ruby-terminfo', :version => '0.1.1', :lib => false
+  config.gem 'gherkin', :version => '2.12.2', :lib => false
   config.gem 'cucumber-rails', :version => '0.3.0', :lib => false
   config.gem 'database_cleaner', :version => '0.5.0', :lib => false
   config.gem 'webrat', :version => '0.7.3', :lib => false
