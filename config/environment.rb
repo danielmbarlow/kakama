@@ -40,7 +40,7 @@ Rails::Initializer.run do |config|
   config.gem 'daemons', :version => '1.0.10'
 
   # Cucumber and dependencies
-  config.gem 'tins', :version => '0.4.3'
+  config.gem 'tins', :version => '1.0.1'
   config.gem 'cucumber', :version => '0.6.4', :lib => false
   config.gem 'email_spec', :version => '0.6.2', :lib => false
   config.gem 'timecop', :version => '0.3.4', :lib => false
