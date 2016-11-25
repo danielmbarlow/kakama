@@ -121,35 +121,6 @@ a:hover { color: purple; }
   }
 }
 
-#index_table,
-.events_list {
-  width: 100%;
-  border: 1px solid #000;
-  border-collapse: collapse;
-  margin-bottom: 15px;
-  * {
-    text-align: left;
-  }
-  tr {
-    border-bottom: 1px solid #000;
-  }
-  th, td {
-    padding: 5px;
-    border-right: 1px solid #000;
-  }
-  .controls {
-    width: 150px;
-  }
-  .checkbox {
-    width: 25px;
-    text-align: center;
-  }
-  .control {
-    width: 50px;
-    text-align: center;
-  }
-}
-
 #staff_search {
   margin: 10px 0;
   width: 300px;
@@ -228,6 +199,13 @@ a:hover { color: purple; }
   .past_events,
   .assigned_staff {
     margin: 15px;
+  }
+  .record {
+    .actions{
+      a {
+        margin: 15px;
+      }
+    }
   }
 }
 
