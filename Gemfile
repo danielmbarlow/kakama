@@ -39,18 +39,16 @@ gem 'strong_parameters'
 gem 'active_model_serializers'
 gem 'swagger-blocks'
 
-#Assets
-group :assets do
-  gem 'therubyracer', '~> 0.9.2'
-  gem 'sass-rails',   "~> 3.2.3"
-  gem 'coffee-rails', "~> 3.2.1"
-  gem 'uglifier'
-  # gem 'prototype-rails', '~> 3.2.1'
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
-  gem 'fullcalendar-rails'
-  gem 'momentjs-rails'
-end
+# These gems need to be outside the assets group so that bootstrap-sass works
+gem 'coffee-rails', "~> 3.2.1"
+gem 'therubyracer', '~> 0.9.2'
+gem 'sass-rails',   "~> 3.2.3"
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 group :development do
   gem 'jazz_hands'

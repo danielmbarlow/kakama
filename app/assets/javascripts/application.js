@@ -17,6 +17,7 @@
 //= require moment
 //= require fullcalendar
 //= require active_scaffold
+//= require bootstrap
 
 $(document).ready(function() {
     dpElement = $('.datepicker')
