@@ -35,7 +35,9 @@
 <div class="required"><%= required_astrix %> denotes a required field</div>
 
 <%= form.inputs :name => "Event Details" do %>
-  <%= form.input :name %>
+  <li class="string" >
+    <%= form.input :name %>
+  </li>
 
   <%= form.input :venue, :input_html => { :name => 'event[venue_id]' } %>
 

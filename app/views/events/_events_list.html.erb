@@ -1,9 +1,8 @@
 <% show_finalize_button ||= false %>
 <%= will_paginate events %>
 
-<table class="events_list">
+<table class="table">
   <tr>
-    <th class="checkbox"></th>
     <th>Name</th>
     <th>Venue</th>
     <th>Event Times</th>
@@ -12,11 +11,11 @@
 
 <% events.each do |event| %>
   <tr>
-    <td class="checkbox">
-      <% if show_finalize_button && event.working? %>
+    <% if show_finalize_button && event.working? %>
+      <td class="checkbox">
         <%= check_box_tag 'approve_event_ids[]', event.id, false, :id => "approve_event_ids_#{event.id}" %>
-      <% end %>
-    </td>
+      </td>
+    <% end %>
     <td><%=link_to h(event.name), event %></td>
     <td><%=link_to h(event.venue.name), event.venue %></td>
     <td><%=h event.start_datetime.to_s(:short) %> - <%=h event.end_datetime.to_s(:short) %></td>
