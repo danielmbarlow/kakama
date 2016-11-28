@@ -20,8 +20,8 @@
       <td>
         <% if rostering.unconfirmed? %>
           <% @has_unconfirmed_rosterings = true %>
-          <%= content_tag 'span', "<em class='astrix'>*</em>", :class => 'unconfirmed' do %>
-            <%= content_tag('em', '*', class: 'astrix') %>
+          <%= content_tag 'span', :class => 'unconfirmed' do %>
+            <%= required_astrix %>
           <% end %>
         <% end %>
       </td>
