@@ -20,7 +20,9 @@
       <td>
         <% if rostering.unconfirmed? %>
           <% @has_unconfirmed_rosterings = true %>
-          <%= content_tag('span', "<em class='astrix'>*</em>", :class => 'unconfirmed') %>
+          <%= content_tag 'span', "<em class='astrix'>*</em>", :class => 'unconfirmed' do %>
+            <%= content_tag('em', '*', class: 'astrix') %>
+          <% end %>
         <% end %>
       </td>
       <td><%= link_to h(event.name), event %></td>
