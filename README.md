@@ -22,3 +22,4 @@
 * If you have trouble installing 'therubyracer' gem, on Mac OS X, try the
   following suggestion on StackOverflow:
     http://stackoverflow.com/questions/19630154/gem-install-therubyracer-v-0-10-2-on-osx-mavericks-not-installing/20145328#20145328
+* Search staff availability creates a n+1 query
