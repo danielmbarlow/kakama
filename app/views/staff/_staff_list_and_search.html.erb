@@ -10,8 +10,14 @@
       <%= hidden_field_tag :role_id, params[:role_id] %>
       <%= hidden_field_tag :show_all_staff, params[:show_all_staff] %>
     <% end %>
-    <%= text_field_tag :search_text, params[:search_text] %>
-    <%= submit_tag 'Search Members' %>
+    <div class="input-group">
+      <%= text_field_tag :search_text,
+                         params[:search_text],
+                         class: 'form-control' %>
+      <span class="input-group-btn">
+        <%= submit_tag 'Search Members', class: 'btn btn-default' %>
+      </span>
+    </div>
   <% end %>
 </div>
 
