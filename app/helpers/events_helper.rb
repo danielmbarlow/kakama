@@ -63,6 +63,6 @@ module EventsHelper
 
   def confirmation_message_for(type)
     "Are you sure? If you change your mind, you will need to contact " +
-    "the administrator to remove your from the #{type} lists."
+    "the administrator to remove you from the #{type} lists."
   end
 end
