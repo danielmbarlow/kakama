@@ -27,7 +27,7 @@
 <% end %>
 
 <%= content_for(:tools) do %>
-  <ul>
+  <ul class='tool_submenu'>
     <li><%= link_to 'Add Event', new_event_path %></li>
     <li><%= link_to 'Current and Upcoming Events', :type => nil %></li>
     <li><%= link_to 'Past Events', :type => 'past' %></li>

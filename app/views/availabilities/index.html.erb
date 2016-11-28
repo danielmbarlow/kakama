@@ -27,7 +27,7 @@
 </div>
 
 <%= content_for(:tools) do %>
-<ul>
+<ul class='tool_submenu'>
   <li><%= link_to 'Add Availability', new_staff_availability_path(@staff, :start_date => params[:start_date]) %></li>
 </ul>
 <% end %>

@@ -60,7 +60,7 @@
 <% end %>
 
 <%= content_for(:tools) do %>
-<ul>
+<ul class='tool_submenu'>
   <% if admin? %>
     <li><%= link_to 'Edit Staff Member', edit_staff_path(@staff) %></li>
     <% unless @staff.email.blank? %>

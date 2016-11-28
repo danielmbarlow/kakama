@@ -3,7 +3,7 @@
 <%= render 'staff_list_and_search' %>
 
 <%= content_for(:tools) do %>
-<ul>
+<ul class='tool_submenu'>
   <li><%= link_to "Add Staff Member", new_staff_path %></li>
   <li><%= link_to "Email all Staff Members", contact_all_staffs_path %></li>
 </ul>

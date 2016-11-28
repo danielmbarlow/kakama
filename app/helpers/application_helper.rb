@@ -2,6 +2,6 @@
 module ApplicationHelper
   def current_section_if(controller)
     (params[:controller].to_sym == controller &&
-      params[:action] != 'dashboard') ? 'current_section' : ''
+      params[:action] != 'dashboard') ? 'active' : ''
   end
 end

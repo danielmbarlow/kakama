@@ -49,37 +49,14 @@ a:hover { color: purple; }
   margin-bottom: 10px;
 }
 
-#tools {
-  border: 1px solid #bbb;
-  background-color: #eee;
-  margin: 0 15px;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    li {
-      float:left;
-      border-right: 1px solid #000;
-      a {
-        display: block;
-        margin: 5px 15px;
-      }
-    }
-    li.current_section {
-      background: #000;
-      a {
-        color: #fff;
-      }
-    }
-    li.last {
-      border: none;
-    }
-  }
-  .divider {
-    clear: both;
-    height: 2px;
-    background-color: #000;
-  }
+.tool_menu {
+  @extend .nav;
+  @extend .nav-tabs;
+}
+
+.tool_submenu {
+  @extend .nav;
+  @extend .nav-pills;
 }
 
 #footer {

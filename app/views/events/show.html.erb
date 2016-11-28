@@ -27,7 +27,7 @@
   <% end %>
 
   <%= content_for(:tools) do %>
-    <ul>
+    <ul class='tool_submenu'>
       <% unless @event.finished? || @event.cancelled? %>
         <li><%= link_to 'Contact Staff Involved', contact_staff_event_path %></li>
       <% end %>

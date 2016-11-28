@@ -37,9 +37,7 @@
       <%= display_flash_contents.html_safe %>
 
       <% if admin? || !yield(:tools).blank? %>
-      <div id="tools">
-        <% if admin? %>
-        <ul>
+        <ul class="tool_menu">
           <li class="<%= current_section_if(:staff) %>"><%= link_to 'Staff Members', staffs_path %></li>
           <li class="<%= current_section_if(:events) %>"><%= link_to 'Events', events_path %></li>
           <li class="<%= current_section_if(:venues) %>"><%= link_to 'Venues', venues_path %></li>
@@ -49,11 +47,7 @@
           <li class="<%= current_section_if(:email_logs) %>"><%= link_to 'Email Logs', email_logs_path %></li>
           <li class="last <%= current_section_if(:settings) %>"><%= link_to 'Site Settings', settings_path %></li>
         </ul>
-        <div class="divider"></div>
-        <% end %>
         <%= yield(:tools) %>
-        <div style="clear:both;"></div>
-      </div>
       <% end %>
 
       <div id="content">
