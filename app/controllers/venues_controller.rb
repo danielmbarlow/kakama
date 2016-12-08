@@ -13,10 +13,9 @@ class VenuesController < ApplicationController
   # some of the methods added by the controller
   include DisplayDeleteErrors
 
-  swagger_path "/#{self.controller_name}" do
+  swagger_path "/venues" do
     operation :get do |operation|
       key :description, 'Lists all records'
-      key :notes, "This lists all records"
       key :tags, [
         'venues'
       ]
@@ -29,6 +28,15 @@ class VenuesController < ApplicationController
                 type: :integer,
                 description: 'Page number'
 
+      response 200 do
+        key :description, 'success'
+        schema do
+          key :type, :array
+          items do
+            key :'$ref', :Venue
+          end
+        end
+      end
     end
 
     operation :post do |operation|
@@ -62,7 +70,6 @@ class VenuesController < ApplicationController
   swagger_path "/#{self.controller_name}/{id}" do
     operation :get do |operation|
       key :description, 'Fetches a record given an id'
-      key :notes, ""
 
       key :tags, [
         'venues'

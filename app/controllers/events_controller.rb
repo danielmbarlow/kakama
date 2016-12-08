@@ -10,7 +10,6 @@ class EventsController < ApplicationController
   swagger_path '/events' do
     operation :get do |operation|
       key :description, 'Fetches all records'
-      key :notes, "This lists all records"
       key :tags, [
         'events'
       ]
@@ -31,6 +30,15 @@ class EventsController < ApplicationController
                 type: :integer,
                 description: 'Page number'
 
+      response 200 do
+        key :description, 'success'
+        schema do
+          key :type, :array
+          items do
+            key :'$ref', :Event
+          end
+        end
+      end
     end
   end
 
@@ -58,7 +66,6 @@ class EventsController < ApplicationController
   swagger_path '/events/{id}' do
     operation :get do |operation|
       key :description, 'Fetches a record given an id'
-      key :notes, ""
 
       key :tags, [
         'events'

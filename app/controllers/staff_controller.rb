@@ -12,7 +12,6 @@ class StaffController < ApplicationController
   swagger_path '/staffs' do
     operation :get do |operation|
       key :description, 'Fetches all records'
-      key :notes, "This lists all the active records"
       key :tags, [
         'staff'
       ]
@@ -31,6 +30,15 @@ class StaffController < ApplicationController
                 type: :integer,
                 description: 'Page number'
 
+      response 200 do
+        key :description, 'success'
+        schema do
+          key :type, :array
+          items do
+            key :'$ref', :Staff
+          end
+        end
+      end
     end
   end
 
@@ -47,7 +55,6 @@ class StaffController < ApplicationController
   swagger_path '/staffs/{id}' do
     operation :get do |operation|
       key :description, 'Fetches a record given an id'
-      key :notes, ""
 
       key :tags, [
         'staff'
