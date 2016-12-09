@@ -20,9 +20,8 @@ class EventsController < ApplicationController
                 in: :query,
                 required: false,
                 type: :string,
-                description: 'Filter by type',
-                notes: 'If not specified, returns all approved current and future events. ' +
-                       ' Valid values: "past", "working", "cancelled".'
+                description: 'Filter by type. If not specified, returns all approved current and future events',
+                enum: ["", "past", "working", "cancelled"]
 
       parameter name: :page,
                 in: :query,
