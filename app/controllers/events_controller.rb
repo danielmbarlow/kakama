@@ -10,7 +10,6 @@ class EventsController < ApplicationController
   swagger_path '/events' do
     operation :get do |operation|
       key :description, 'Fetches all records'
-      key :notes, "This lists all records"
       key :tags, [
         'events'
       ]
@@ -21,9 +20,8 @@ class EventsController < ApplicationController
                 in: :query,
                 required: false,
                 type: :string,
-                description: 'Filter by type',
-                notes: 'If not specified, returns all approved current and future events. ' +
-                       ' Valid values: "past", "working", "cancelled".'
+                description: 'Filter by type. If not specified, returns all approved current and future events',
+                enum: ["", "past", "working", "cancelled"]
 
       parameter name: :page,
                 in: :query,
@@ -31,6 +29,15 @@ class EventsController < ApplicationController
                 type: :integer,
                 description: 'Page number'
 
+      response 200 do
+        key :description, 'success'
+        schema do
+          key :type, :array
+          items do
+            key :'$ref', :Event
+          end
+        end
+      end
     end
   end
 
@@ -58,7 +65,6 @@ class EventsController < ApplicationController
   swagger_path '/events/{id}' do
     operation :get do |operation|
       key :description, 'Fetches a record given an id'
-      key :notes, ""
 
       key :tags, [
         'events'
@@ -75,10 +81,8 @@ class EventsController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Event
-          end
+          key :type, :object
+          key :'$ref', :Event
         end
       end
     end

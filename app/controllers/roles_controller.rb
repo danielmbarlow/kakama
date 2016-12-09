@@ -16,7 +16,6 @@ class RolesController < ApplicationController
   swagger_path "/#{self.controller_name}" do
     operation :get do |operation|
       key :description, 'Lists all records'
-      key :notes, "This lists all records"
       key :tags, [
         'roles'
       ]
@@ -29,6 +28,15 @@ class RolesController < ApplicationController
                 type: :integer,
                 description: 'Page number'
 
+      response 200 do
+        key :description, 'success'
+        schema do
+          key :type, :array
+          items do
+            key :'$ref', :Role
+          end
+        end
+      end
     end
 
     operation :post do |operation|
@@ -62,7 +70,6 @@ class RolesController < ApplicationController
   swagger_path "/#{self.controller_name}/{id}" do
     operation :get do |operation|
       key :description, 'Fetches a record given an id'
-      key :notes, ""
 
       key :tags, [
         'roles'
@@ -79,10 +86,8 @@ class RolesController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Role
-          end
+          key :type, :object
+          key :'$ref', :Role
         end
       end
     end
