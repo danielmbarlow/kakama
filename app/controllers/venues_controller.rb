@@ -86,10 +86,8 @@ class VenuesController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Venue
-          end
+          key :type, :object
+          key :'$ref', :Venue
         end
       end
     end

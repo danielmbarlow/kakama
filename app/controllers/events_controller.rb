@@ -82,10 +82,8 @@ class EventsController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Event
-          end
+          key :type, :object
+          key :'$ref', :Event
         end
       end
     end

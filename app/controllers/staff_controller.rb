@@ -71,10 +71,8 @@ class StaffController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Staff
-          end
+          key :type, :object
+          key :'$ref', :Staff
         end
       end
     end

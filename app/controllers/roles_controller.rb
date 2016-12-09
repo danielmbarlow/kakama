@@ -86,10 +86,8 @@ class RolesController < ApplicationController
       response 200 do
         key :description, 'record found'
         schema do
-          key :type, :array
-          items do
-            key :'$ref', :Role
-          end
+          key :type, :object
+          key :'$ref', :Role
         end
       end
     end
